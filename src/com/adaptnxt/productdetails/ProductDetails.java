@@ -41,19 +41,19 @@ public class ProductDetails
 		    
 		    public static void writeProductsToCsv(List<ProductData> products, String filename) throws IOException
 		    {
-		        FileWriter csvWriter = new FileWriter(filename);
-		        csvWriter.append("Product Name, Product Price, Item Number, Model Number, Product Category, Product Description\n");
+		        FileWriter csvFw = new FileWriter(filename);
+		        csvFw.append("Product Name, Product Price, Item Number, Model Number, Product Category, Product Description\n");
 		        for (ProductData product : products)
 		        {
-		            csvWriter.append(product.getName()).append(",");
-		            csvWriter.append(product.getPrice()).append(" ");
-		            csvWriter.append(product.getSku()).append(",");
-		            csvWriter.append(product.getModel()).append(",");
-		            csvWriter.append(product.getCategory()).append(" ");
-		            csvWriter.append(product.getDesc()).append("\n");
+		        	csvFw.append(product.getName()).append(",");
+		        	csvFw.append(product.getPrice()).append(" ");
+		        	csvFw.append(product.getSku()).append(",");
+		        	csvFw.append(product.getModel()).append(",");
+		        	csvFw.append(product.getCategory()).append(" ");
+		        	csvFw.append(product.getDesc()).append("\n");
 		        }
-		        csvWriter.flush();
-		        csvWriter.close();
+		        csvFw.flush();
+		        csvFw.close();
 		    }
 
 		}
